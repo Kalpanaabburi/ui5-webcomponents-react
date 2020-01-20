@@ -57,7 +57,7 @@ export interface ObjectPagePropTypes extends CommonProps {
   renderKeyInfos?: () => JSX.Element;
 }
 
-const useStyles = createUseStyles<JSSTheme, keyof ReturnType<typeof styles>>(styles, { name: 'ObjectPage' });
+const useStyles = createUseStyles<keyof ReturnType<typeof styles>>(styles, { name: 'ObjectPage' });
 const defaultScrollbarWidth = 12;
 
 const findSectionIndexById = (sections, id) => {
@@ -72,6 +72,9 @@ const findSectionIndexById = (sections, id) => {
 
 const positionRelativStyle: CSSProperties = { position: 'relative' };
 
+/**
+ * <code>import { ObjectPage } from '@ui5/webcomponents-react/lib/ObjectPage';</code>
+ */
 const ObjectPage: FC<ObjectPagePropTypes> = forwardRef((props: ObjectPagePropTypes, ref: RefObject<HTMLDivElement>) => {
   const {
     title,

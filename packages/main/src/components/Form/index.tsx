@@ -6,7 +6,6 @@ import { TitleLevel } from '@ui5/webcomponents-react/lib/TitleLevel';
 import React, { FC, forwardRef, ReactElement, ReactNode, ReactNodeArray, Ref, useMemo } from 'react';
 import { createUseStyles } from 'react-jss';
 import { CommonProps } from '../../interfaces/CommonProps';
-import { JSSTheme } from '../../interfaces/JSSTheme';
 import { CurrentRange } from './CurrentViewportRangeContext';
 import { styles } from './Form.jss';
 import { FormGroup } from './FormGroup';
@@ -22,8 +21,11 @@ export interface FormPropTypes extends CommonProps {
   title?: string;
 }
 
-const useStyles = createUseStyles<JSSTheme, keyof ReturnType<typeof styles>>(styles, { name: 'Form' });
+const useStyles = createUseStyles<keyof ReturnType<typeof styles>>(styles, { name: 'Form' });
 
+/**
+ * <code>import { Form } from '@ui5/webcomponents-react/lib/Form';</code>
+ */
 const Form: FC<FormPropTypes> = forwardRef((props: FormPropTypes, ref: Ref<HTMLDivElement>) => {
   const { title, children } = props;
 

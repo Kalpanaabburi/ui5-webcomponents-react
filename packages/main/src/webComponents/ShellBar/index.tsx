@@ -1,7 +1,7 @@
-import React, { FC, ReactNode } from 'react';
-import { Event } from '@ui5/webcomponents-react-base/lib/Event';
 import UI5ShellBar from '@ui5/webcomponents-fiori/dist/ShellBar';
+import { Event } from '@ui5/webcomponents-react-base/lib/Event';
 import { withWebComponent } from '@ui5/webcomponents-react/lib/withWebComponent';
+import React, { FC, ReactNode } from 'react';
 import { WithWebComponentPropTypes } from '../../internal/withWebComponent';
 
 export interface ShellBarPropTypes extends WithWebComponentPropTypes {
@@ -25,6 +25,11 @@ export interface ShellBarPropTypes extends WithWebComponentPropTypes {
   startButton?: ReactNode; // @generated
 }
 
+/**
+ * <code>import { ShellBar } from '@ui5/webcomponents-react/lib/ShellBar';</code>
+ * <br />
+ * <a href="https://sap.github.io/ui5-webcomponents/playground/components/ShellBar" target="_blank">UI5 Web Components Playground</a>
+ */
 const ShellBar: FC<ShellBarPropTypes> = withWebComponent<ShellBarPropTypes>(UI5ShellBar);
 
 ShellBar.displayName = 'ShellBar';

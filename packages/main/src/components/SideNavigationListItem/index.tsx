@@ -38,12 +38,12 @@ export interface SideNavigationListItemProps extends CommonProps {
   children?: ReactNode | ReactNodeArray;
 }
 
-const useStyles = createUseStyles<JSSTheme, keyof ReturnType<typeof sideNavigationListItemStyles>>(
-  sideNavigationListItemStyles,
-  {
-    name: 'SideNavigationListItem'
-  }
-);
+const useStyles = createUseStyles<keyof ReturnType<typeof sideNavigationListItemStyles>>(sideNavigationListItemStyles, {
+  name: 'SideNavigationListItem'
+});
+/**
+ * <code>import { SideNavigationListItem } from '@ui5/webcomponents-react/lib/SideNavigationListItem';</code>
+ */
 const SideNavigationListItem: FC<SideNavigationListItemProps> = forwardRef(
   (props: SideNavigationListItemProps, ref: Ref<HTMLDivElement>) => {
     const { icon, text, id, children, tooltip, slot, className, style } = props;

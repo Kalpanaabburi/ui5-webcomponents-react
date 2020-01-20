@@ -1,8 +1,8 @@
 import { StyleClassHelper } from '@ui5/webcomponents-react-base/lib/StyleClassHelper';
+import { Title } from '@ui5/webcomponents-react/lib/Title';
 import { ChartOptions } from 'chart.js';
 import React, { CSSProperties, FC, forwardRef, Ref, useMemo } from 'react';
 import { createUseStyles } from 'react-jss';
-import { Title } from '@ui5/webcomponents-react/lib/Title';
 import { CommonProps } from '../../interfaces/CommonProps';
 import { ChartBaseDefaultProps } from '../../util/ChartBaseDefaultProps';
 import { useMergedConfig } from '../../util/Utils';
@@ -38,6 +38,9 @@ const styles = {
 
 const useStyles = createUseStyles(styles, { name: 'RadialChart' });
 
+/**
+ * <code>import { RadialChart } from '@ui5/webcomponents-react-charts/lib/RadialChart';</code>
+ */
 const RadialChart: FC<RadialChartPropTypes> = forwardRef((props: RadialChartPropTypes, ref: Ref<HTMLDivElement>) => {
   const { maxValue, value, displayValue, style, className, colors, options, width, height } = props;
 

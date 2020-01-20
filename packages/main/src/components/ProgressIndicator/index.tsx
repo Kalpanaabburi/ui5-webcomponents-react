@@ -34,8 +34,11 @@ export interface ProgressIndicatorPropTypes extends CommonProps {
   state?: ValueState;
 }
 
-const useStyles = createUseStyles<JSSTheme, keyof ReturnType<typeof styles>>(styles, { name: 'ProgressIndicator' });
+const useStyles = createUseStyles<keyof ReturnType<typeof styles>>(styles, { name: 'ProgressIndicator' });
 
+/**
+ * <code>import { ProgressIndicator } from '@ui5/webcomponents-react/lib/ProgressIndicator';</code>
+ */
 const ProgressIndicator: FC<ProgressIndicatorPropTypes> = forwardRef(
   (props: ProgressIndicatorPropTypes, ref: Ref<HTMLDivElement>) => {
     const { percentValue, displayValue, width, height, className, style, tooltip, state, slot } = props;
