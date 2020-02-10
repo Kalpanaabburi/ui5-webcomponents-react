@@ -5,7 +5,6 @@ import { createGenerateClassName } from './lib/createGenerateClassName';
 import { CssSizeVariables, CssSizeVariablesNames, cssVariablesStyles } from './lib/CssSizeVariables';
 import { Device } from './lib/Device';
 import { Event } from './lib/Event';
-import { HSLColor } from './lib/HSLColor';
 import { LOG_LEVEL, Logger } from './lib/Logger';
 import { Optional } from './lib/Optional';
 import * as spacing from './lib/spacing';
@@ -25,7 +24,6 @@ export {
   LOG_LEVEL,
   Device,
   spacing,
-  HSLColor,
   ThemingParameters,
   createGenerateClassName,
   useConsolidatedRef,
