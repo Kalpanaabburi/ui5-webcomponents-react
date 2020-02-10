@@ -27,7 +27,6 @@ import React, {
 import { createPortal } from 'react-dom';
 import { createUseStyles } from 'react-jss';
 import { CommonProps } from '../../interfaces/CommonProps';
-import { JSSTheme } from '../../interfaces/JSSTheme';
 import { sideNavigationListItemStyles } from './SideNavigationListItem.jss';
 
 export interface SideNavigationListItemProps extends CommonProps {
@@ -37,12 +36,9 @@ export interface SideNavigationListItemProps extends CommonProps {
   children?: ReactNode | ReactNodeArray;
 }
 
-const useStyles = createUseStyles<JSSTheme, keyof ReturnType<typeof sideNavigationListItemStyles>>(
-  sideNavigationListItemStyles,
-  {
-    name: 'SideNavigationListItem'
-  }
-);
+const useStyles = createUseStyles(sideNavigationListItemStyles, {
+  name: 'SideNavigationListItem'
+});
 /**
  * <code>import { SideNavigationListItem } from '@ui5/webcomponents-react/lib/SideNavigationListItem';</code>
  */

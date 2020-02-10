@@ -15,7 +15,6 @@ import { TitleLevel } from '@ui5/webcomponents-react/lib/TitleLevel';
 import React, { FC, forwardRef, Ref, useCallback, useEffect, useMemo, useState } from 'react';
 import { createUseStyles } from 'react-jss';
 import { CommonProps } from '../../interfaces/CommonProps';
-import { JSSTheme } from '../../interfaces/JSSTheme';
 
 export interface VariantItem {
   key: string;
@@ -65,7 +64,7 @@ const styles = {
   }
 };
 
-const useStyles = createUseStyles<JSSTheme, keyof ReturnType<typeof styles>>(styles, { name: 'VariantManagement' });
+const useStyles = createUseStyles(styles, { name: 'VariantManagement' });
 
 /**
  * <code>import { VariantManagement } from '@ui5/webcomponents-react/lib/VariantManagement';</code>

@@ -80,7 +80,7 @@ const styles = {
   }
 };
 
-const useStyles = createUseStyles<JSSTheme, keyof ReturnType<typeof styles>>(styles, { name: 'TableColumnHeader' });
+const useStyles = createUseStyles(styles, { name: 'TableColumnHeader' });
 
 export /**
  * <code>import { ColumnHeader } from '@ui5/webcomponents-react/lib/ColumnHeader';</code>

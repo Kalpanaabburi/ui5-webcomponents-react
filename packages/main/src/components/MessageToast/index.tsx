@@ -9,7 +9,6 @@ import { createPortal } from 'react-dom';
 import { createUseStyles } from 'react-jss';
 import { toast, ToastContainer, ToastContent, ToastOptions } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
-import { JSSTheme } from '../../interfaces/JSSTheme';
 import styles from './MessageToast.jss';
 
 const coloredStyles = {
@@ -30,7 +29,7 @@ const coloredStyles = {
   }
 };
 
-const useIconStyles = createUseStyles<JSSTheme, keyof ReturnType<typeof coloredStyles>>(coloredStyles, {
+const useIconStyles = createUseStyles(coloredStyles, {
   name: 'MessageToastIcon'
 });
 
@@ -39,7 +38,7 @@ const ColoredIcon = ({ name, state }) => {
   return <Icon name={name} className={`${classes.base} ${classes[state]}`} />;
 };
 
-const useMessageToastStyles = createUseStyles<JSSTheme, keyof ReturnType<typeof styles>>(styles, {
+const useMessageToastStyles = createUseStyles(styles, {
   name: 'MessageToast'
 });
 

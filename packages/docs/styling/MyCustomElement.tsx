@@ -17,7 +17,7 @@ const styles = ({ parameters }: JSSTheme) => ({
   }
 });
 
-const useStyles = createUseStyles<keyof ReturnType<typeof styles>>(styles);
+const useStyles = createUseStyles(styles);
 
 export const MyCustomElement = () => {
   const classes = useStyles();

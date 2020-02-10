@@ -7,7 +7,6 @@ import { TitleLevel } from '@ui5/webcomponents-react/lib/TitleLevel';
 import React, { Children, FC, forwardRef, ReactNode, ReactNodeArray, Ref } from 'react';
 import { createUseStyles } from 'react-jss';
 import { CommonProps } from '../../../interfaces/CommonProps';
-import { JSSTheme } from '../../../interfaces/JSSTheme';
 import { styles } from '../Form.jss';
 
 export interface FormGroupProps extends CommonProps {
@@ -15,7 +14,7 @@ export interface FormGroupProps extends CommonProps {
   children: ReactNode | ReactNodeArray;
 }
 
-const useStyles = createUseStyles<JSSTheme, keyof ReturnType<typeof styles>>(styles, { name: 'FormGroup' });
+const useStyles = createUseStyles(styles, { name: 'FormGroup' });
 
 /**
  * <code>import { FormGroup } from '@ui5/webcomponents-react/lib/FormGroup';</code>
