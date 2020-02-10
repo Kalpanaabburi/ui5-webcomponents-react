@@ -1,4 +1,4 @@
-import { JSSTheme } from '@ui5/webcomponents-react/interfaces/JSSTheme';
+import { ThemingParameters } from '@ui5/webcomponents-react-base/lib/ThemingParameters';
 import React, { FC, RefObject, useMemo } from 'react';
 import { createUseStyles } from 'react-jss';
 import { ZIndex } from '../../enums/ZIndex';
@@ -9,14 +9,14 @@ interface Props {
   width: number;
 }
 
-const styles = ({ parameters }: JSSTheme) => ({
+const styles = {
   outerScrollbar: {
     position: 'absolute',
     right: 0,
     overflow: 'hidden',
     height: '100%',
     zIndex: ZIndex.ResponsivePopover,
-    backgroundColor: parameters.sapObjectHeader_Background,
+    backgroundColor: ThemingParameters.sapObjectHeader_Background,
     '& ::-webkit-scrollbar': {
       backgroundColor: '#ffffff'
     },
@@ -36,7 +36,7 @@ const styles = ({ parameters }: JSSTheme) => ({
     overflowX: 'hidden',
     height: '100%'
   }
-});
+};
 
 const useScrollBarStyles = createUseStyles(styles, { name: 'ObjectPageScrollBar' });
 

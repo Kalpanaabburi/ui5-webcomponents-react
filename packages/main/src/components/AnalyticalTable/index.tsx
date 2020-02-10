@@ -31,6 +31,7 @@ import {
   useSortBy,
   useTable
 } from 'react-table';
+import { TableScaleWidthMode } from '../../enums/TableScaleWidthMode';
 import { CommonProps } from '../../interfaces/CommonProps';
 import { JSSTheme } from '../../interfaces/JSSTheme';
 import styles from './AnayticalTable.jss';
@@ -39,7 +40,9 @@ import { DefaultColumn } from './defaults/Column';
 import { DefaultLoadingComponent } from './defaults/LoadingComponent';
 import { TablePlaceholder } from './defaults/LoadingComponent/TablePlaceholder';
 import { DefaultNoDataComponent } from './defaults/NoDataComponent';
+import { useColumnsDependencies } from './hooks/useColumnsDependencies';
 import { useDragAndDrop } from './hooks/useDragAndDrop';
+import { useDynamicColumnWidths } from './hooks/useDynamicColumnWidths';
 import { useTableCellStyling } from './hooks/useTableCellStyling';
 import { useTableHeaderGroupStyling } from './hooks/useTableHeaderGroupStyling';
 import { useTableHeaderStyling } from './hooks/useTableHeaderStyling';
@@ -50,9 +53,6 @@ import { useToggleRowExpand } from './hooks/useToggleRowExpand';
 import { stateReducer } from './tableReducer/stateReducer';
 import { TitleBar } from './TitleBar';
 import { VirtualTableBody } from './virtualization/VirtualTableBody';
-import { useDynamicColumnWidths } from './hooks/useDynamicColumnWidths';
-import { TableScaleWidthMode } from '../../enums/TableScaleWidthMode';
-import { useColumnsDependencies } from './hooks/useColumnsDependencies';
 
 export interface ColumnConfiguration extends Column {
   accessor?: string;

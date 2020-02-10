@@ -1,5 +1,5 @@
+import { ThemingParameters } from '@ui5/webcomponents-react-base/lib/ThemingParameters';
 import { CSSProperties } from 'react';
-import { JSSTheme } from '../../interfaces/JSSTheme';
 
 const size = (s): CSSProperties => ({
   height: s,
@@ -10,19 +10,19 @@ const size = (s): CSSProperties => ({
   textAlign: 'center'
 });
 
-const styles = ({ parameters }: JSSTheme) => ({
+const styles = {
   // outer flexbox
   avatar: {
-    backgroundColor: parameters.sapAccentColor7,
-    color: parameters.sapContent_ContrastTextColor,
-    fontFamily: parameters.sapFontFamily,
+    backgroundColor: ThemingParameters.sapAccentColor7,
+    color: ThemingParameters.sapContent_ContrastTextColor,
+    fontFamily: ThemingParameters.sapFontFamily,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     borderRadius: '0.25rem',
-    '--sapContent_NonInteractiveIconColor': parameters.sapContent_ContrastIconColor
+    '--sapContent_NonInteractiveIconColor': ThemingParameters.sapContent_ContrastIconColor
   },
   // borderRadius 100%
   circle: {
@@ -53,6 +53,6 @@ const styles = ({ parameters }: JSSTheme) => ({
     ...size('2rem'),
     fontSize: '0.75rem'
   }
-});
+};
 
 export default styles;

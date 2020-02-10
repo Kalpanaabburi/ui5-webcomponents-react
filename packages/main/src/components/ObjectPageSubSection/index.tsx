@@ -1,11 +1,11 @@
 import { StyleClassHelper } from '@ui5/webcomponents-react-base/lib/StyleClassHelper';
+import { ThemingParameters } from '@ui5/webcomponents-react-base/lib/ThemingParameters';
 import { useConsolidatedRef } from '@ui5/webcomponents-react-base/lib/useConsolidatedRef';
 import { usePassThroughHtmlProps } from '@ui5/webcomponents-react-base/lib/usePassThroughHtmlProps';
 import { useScrollElement } from '@ui5/webcomponents-react-base/lib/useScrollElement';
 import React, { FC, forwardRef, ReactNode, ReactNodeArray, RefObject } from 'react';
 import { createUseStyles } from 'react-jss';
 import { CommonProps } from '../../interfaces/CommonProps';
-import { JSSTheme } from '../../interfaces/JSSTheme';
 import { EmptyIdPropException } from '../ObjectPage/EmptyIdPropException';
 
 export interface ObjectPageSubSectionPropTypes extends CommonProps {
@@ -14,25 +14,25 @@ export interface ObjectPageSubSectionPropTypes extends CommonProps {
   children: ReactNode | ReactNodeArray;
 }
 
-const styles = ({ parameters }: JSSTheme) => ({
+const styles = {
   objectPageSubSection: {
     padding: '1rem 0',
     '&:focus': {
-      outline: `1px dotted ${parameters.sapContent_FocusColor}`,
+      outline: `1px dotted ${ThemingParameters.sapContent_FocusColor}`,
       outlineOffset: '-1px'
     }
   },
   objectPageSubSectionHeaderTitle: {
-    fontSize: parameters.sapFontHeader5Size,
-    color: parameters.sapGroup_TitleTextColor,
+    fontSize: ThemingParameters.sapFontHeader5Size,
+    color: ThemingParameters.sapGroup_TitleTextColor,
     marginBottom: '0.5rem'
   },
   subSectionContent: {
     padding: '1rem 2rem 3rem 0'
   }
-});
+};
 
-const useStyles = createUseStyles<JSSTheme, keyof ReturnType<typeof styles>>(styles, { name: 'ObjectPageSubSection' });
+const useStyles = createUseStyles(styles, { name: 'ObjectPageSubSection' });
 
 /**
  * <code>import { ObjectPageSubSection } from '@ui5/webcomponents-react/lib/ObjectPageSubSection';</code>

@@ -1,6 +1,7 @@
 import '@ui5/webcomponents-icons/dist/icons/slim-arrow-down';
 import { Event } from '@ui5/webcomponents-react-base/lib/Event';
 import { ScrollLink } from '@ui5/webcomponents-react-base/lib/ScrollLink';
+import { ThemingParameters } from '@ui5/webcomponents-react-base/lib/ThemingParameters';
 import { Icon } from '@ui5/webcomponents-react/lib/Icon';
 import { List } from '@ui5/webcomponents-react/lib/List';
 import { ObjectPageMode } from '@ui5/webcomponents-react/lib/ObjectPageMode';
@@ -9,7 +10,6 @@ import { Popover } from '@ui5/webcomponents-react/lib/Popover';
 import { StandardListItem } from '@ui5/webcomponents-react/lib/StandardListItem';
 import React, { FC, useCallback, useState } from 'react';
 import { createUseStyles } from 'react-jss';
-import { JSSTheme } from '../../interfaces/JSSTheme';
 
 interface ObjectPageAnchorPropTypes {
   section: any;
@@ -21,7 +21,7 @@ interface ObjectPageAnchorPropTypes {
   mode: ObjectPageMode;
 }
 
-const anchorButtonStyles = ({ parameters }: JSSTheme) => ({
+const anchorButtonStyles = {
   anchorButtonContainer: {
     position: 'relative',
     display: 'inline-flex',
@@ -32,25 +32,25 @@ const anchorButtonStyles = ({ parameters }: JSSTheme) => ({
     }
   },
   button: {
-    color: parameters.sapContent_LabelColor,
-    fontFamily: parameters.sapFontFamily,
-    fontSize: parameters.sapFontSize,
+    color: ThemingParameters.sapContent_LabelColor,
+    fontFamily: ThemingParameters.sapFontFamily,
+    fontSize: ThemingParameters.sapFontSize,
     cursor: 'pointer'
   },
   selected: {
-    color: parameters.sapSelectedColor,
+    color: ThemingParameters.sapSelectedColor,
     minWidth: '2rem',
     textAlign: 'center',
     '&:after': {
       content: '""',
-      borderBottom: `0.188rem solid ${parameters.sapSelectedColor}`,
+      borderBottom: `0.188rem solid ${ThemingParameters.sapSelectedColor}`,
       width: '100%',
       position: 'absolute',
       bottom: 0,
       left: 0
     }
   }
-});
+};
 const useStyles = createUseStyles(anchorButtonStyles, {
   name: 'ObjectPageAnchorButton'
 });

@@ -1,29 +1,29 @@
-import { JSSTheme } from '../../interfaces/JSSTheme';
+import { ThemingParameters } from '@ui5/webcomponents-react-base/lib/ThemingParameters';
 
-const style = ({ parameters }: JSSTheme) => ({
+const style = {
   notificationContainer: {
     width: '100%',
     maxWidth: '60rem',
-    backgroundColor: parameters.sapList_Background,
-    boxShadow: parameters.sapContent_Shadow0,
+    backgroundColor: ThemingParameters.sapList_Background,
+    boxShadow: ThemingParameters.sapContent_Shadow0,
     display: 'flex',
     flexDirection: 'row',
     position: 'relative',
     overflow: 'hidden',
     '&:hover': {
-      backgroundColor: parameters.sapList_Hover_Background
+      backgroundColor: ThemingParameters.sapList_Hover_Background
     },
     '&:active': {
-      backgroundColor: parameters.sapList_Hover_Background
+      backgroundColor: ThemingParameters.sapList_Hover_Background
     }
   },
   notificationContainerChild: {
-    backgroundColor: parameters.sapList_HeaderBackground
+    backgroundColor: ThemingParameters.sapList_HeaderBackground
   },
   header: {
     display: 'flex',
     flexDirection: 'row',
-    boxShadow: `inset 0 -0.0625rem ${parameters.sapPageHeader_BorderColor}`,
+    boxShadow: `inset 0 -0.0625rem ${ThemingParameters.sapPageHeader_BorderColor}`,
     padding: '1rem 0 1rem 1.25rem',
     alignItems: 'center'
   },
@@ -38,9 +38,9 @@ const style = ({ parameters }: JSSTheme) => ({
     paddingRight: '40px'
   },
   title: {
-    color: parameters.sapGroup_TitleTextColor,
-    fontFamily: parameters.sapFontHeaderFamily,
-    textShadow: parameters.sapContent_TextShadow,
+    color: ThemingParameters.sapGroup_TitleTextColor,
+    fontFamily: ThemingParameters.sapFontHeaderFamily,
+    textShadow: ThemingParameters.sapContent_TextShadow,
     fontSize: '14px',
     paddingRight: '40px'
   },
@@ -69,7 +69,7 @@ const style = ({ parameters }: JSSTheme) => ({
     paddingRight: '0.375rem'
   },
   descriptionEllipsised: {
-    color: parameters.sapContent_LabelColor,
+    color: ThemingParameters.sapContent_LabelColor,
     overflow: 'hidden',
     textAlign: 'left',
     textOverflow: 'ellipsis',
@@ -80,13 +80,13 @@ const style = ({ parameters }: JSSTheme) => ({
     WebkitBoxOrient: 'vertical'
   },
   descriptionFull: {
-    color: parameters.sapContent_LabelColor
+    color: ThemingParameters.sapContent_LabelColor
   },
   metadata: {
     paddingTop: '0.375rem',
-    fontFamily: parameters.sapFontFamily,
-    fontSize: parameters.sapFontSize,
-    color: parameters.sapContent_LabelColor,
+    fontFamily: ThemingParameters.sapFontFamily,
+    fontSize: ThemingParameters.sapFontSize,
+    color: ThemingParameters.sapContent_LabelColor,
     fontWeight: 'normal',
     display: 'flex',
     flexWrap: 'wrap',
@@ -100,23 +100,23 @@ const style = ({ parameters }: JSSTheme) => ({
     minWidth: '0.375rem',
     height: 'auto'
   },
-  high: { backgroundColor: parameters.sapErrorBorderColor },
-  medium: { backgroundColor: parameters.sapWarningBorderColor },
-  low: { backgroundColor: parameters.sapSuccessBorderColor },
-  none: { backgroundColor: parameters.sapNeutralBorderColor },
+  high: { backgroundColor: ThemingParameters.sapErrorBorderColor },
+  medium: { backgroundColor: ThemingParameters.sapWarningBorderColor },
+  low: { backgroundColor: ThemingParameters.sapSuccessBorderColor },
+  none: { backgroundColor: ThemingParameters.sapNeutralBorderColor },
   semanticIcon: {
     paddingRight: '0.375rem',
     width: '1rem',
     display: 'flex'
   },
   error: {
-    color: parameters.sapNegativeElementColor
+    color: ThemingParameters.sapNegativeElementColor
   },
   warning: {
-    color: parameters.sapCriticalElementColor
+    color: ThemingParameters.sapCriticalElementColor
   },
   success: {
-    color: parameters.sapPositiveElementColor
+    color: ThemingParameters.sapPositiveElementColor
   },
   contentAction: {
     display: 'flex',
@@ -139,6 +139,6 @@ const style = ({ parameters }: JSSTheme) => ({
     paddingLeft: '1rem',
     alignSelf: 'flex-start'
   }
-});
+};
 
 export default style;

@@ -4,6 +4,7 @@ import '@ui5/webcomponents-icons/dist/icons/sort-ascending';
 import '@ui5/webcomponents-icons/dist/icons/sort-descending';
 import { Event } from '@ui5/webcomponents-react-base/lib/Event';
 import { StyleClassHelper } from '@ui5/webcomponents-react-base/lib/StyleClassHelper';
+import { ThemingParameters } from '@ui5/webcomponents-react-base/lib/ThemingParameters';
 import { Icon } from '@ui5/webcomponents-react/lib/Icon';
 import React, { CSSProperties, DragEventHandler, FC, ReactNode, ReactNodeArray, useMemo } from 'react';
 import { createUseStyles, useTheme } from 'react-jss';
@@ -36,7 +37,7 @@ export interface ColumnHeaderProps {
   isDraggable: boolean;
 }
 
-const styles = ({ parameters }: JSSTheme) => ({
+const styles = {
   header: {
     padding: `0 0.5rem`,
     height: '100%',
@@ -44,11 +45,11 @@ const styles = ({ parameters }: JSSTheme) => ({
     justifyContent: 'begin',
     alignItems: 'center',
     textAlign: 'left',
-    fontFamily: parameters.sapFontFamily,
-    fontSize: parameters.sapFontSize,
+    fontFamily: ThemingParameters.sapFontFamily,
+    fontSize: ThemingParameters.sapFontSize,
     fontWeight: 'normal',
-    color: parameters.sapList_TextColor,
-    background: parameters.sapList_HeaderBackground,
+    color: ThemingParameters.sapList_TextColor,
+    background: ThemingParameters.sapList_HeaderBackground,
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
     maxWidth: '100%',
@@ -57,7 +58,7 @@ const styles = ({ parameters }: JSSTheme) => ({
   iconContainer: {
     display: 'inline-block',
     position: 'absolute',
-    color: parameters.sapContent_IconColor,
+    color: ThemingParameters.sapContent_IconColor,
     right: '0',
     marginRight: '0.5rem',
     '& :last-child': {
@@ -77,7 +78,7 @@ const styles = ({ parameters }: JSSTheme) => ({
   lastColumn: {
     right: '8px'
   }
-});
+};
 
 const useStyles = createUseStyles<JSSTheme, keyof ReturnType<typeof styles>>(styles, { name: 'TableColumnHeader' });
 
@@ -177,7 +178,7 @@ const ColumnHeader: FC<ColumnHeaderProps> = (props) => {
       modifiedStyles.maxWidth = `calc(100% - 16px)`;
     }
     if (dragOver) {
-      modifiedStyles.borderLeft = `3px solid ${theme.parameters.sapSelectedColor}`;
+      modifiedStyles.borderLeft = `3px solid ${theme.ThemingParameters.sapSelectedColor}`;
     }
     return modifiedStyles;
   }, [isResizable, dragOver]);

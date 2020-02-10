@@ -1,8 +1,8 @@
-import { JSSTheme } from '../../interfaces/JSSTheme';
+import { ThemingParameters } from '@ui5/webcomponents-react-base/lib/ThemingParameters';
 
-const styles = ({ parameters }: JSSTheme) => ({
+const styles = {
   formTitle: {
-    borderBottom: `1px solid ${parameters.sapGroup_TitleBorderColor}`
+    borderBottom: `1px solid ${ThemingParameters.sapGroup_TitleBorderColor}`
   },
   formTitlePaddingBottom: {
     paddingBottom: '2em'
@@ -23,6 +23,6 @@ const styles = ({ parameters }: JSSTheme) => ({
   formElement: {
     display: 'block'
   }
-});
+};
 
 export { styles };

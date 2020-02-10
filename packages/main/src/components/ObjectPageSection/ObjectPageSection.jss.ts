@@ -1,23 +1,23 @@
-import { JSSTheme } from '../../interfaces/JSSTheme';
+import { ThemingParameters } from '@ui5/webcomponents-react-base/lib/ThemingParameters';
 
-const styles = ({ parameters }: JSSTheme) => ({
+const styles = {
   header: {
     padding: '0 3rem 0 2.5rem',
-    borderBottom: `1px solid ${parameters.sapGroup_TitleBorderColor}`,
+    borderBottom: `1px solid ${ThemingParameters.sapGroup_TitleBorderColor}`,
     boxSizing: 'border-box',
     height: '2.75rem'
   },
   title: {
     height: '2.75rem',
-    color: parameters.sapTextColor,
-    fontSize: parameters.sapFontHeader4Size,
-    borderBottom: `1px solid ${parameters.sapActiveColor}`,
+    color: ThemingParameters.sapTextColor,
+    fontSize: ThemingParameters.sapFontHeader4Size,
+    borderBottom: `1px solid ${ThemingParameters.sapActiveColor}`,
     display: 'inline-block',
     maxWidth: '100%',
     overflow: 'hidden',
     whiteSpace: 'nowrap',
     textOverflow: 'ellipsis',
-    fontFamily: parameters.sapFontFamily
+    fontFamily: ThemingParameters.sapFontFamily
   },
   uppercase: {
     textTransform: 'uppercase'
@@ -27,8 +27,8 @@ const styles = ({ parameters }: JSSTheme) => ({
   },
   sectionContentInner: {
     padding: '1rem 2rem 2rem 2.5rem',
-    fontFamily: parameters.sapFontFamily
+    fontFamily: ThemingParameters.sapFontFamily
   }
-});
+};
 
 export default styles;

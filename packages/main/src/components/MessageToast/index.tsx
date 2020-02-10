@@ -1,6 +1,7 @@
 import '@ui5/webcomponents-icons/dist/icons/message-error';
 import '@ui5/webcomponents-icons/dist/icons/message-warning';
 import '@ui5/webcomponents-icons/dist/icons/sys-enter';
+import { ThemingParameters } from '@ui5/webcomponents-react-base/lib/ThemingParameters';
 import { Icon } from '@ui5/webcomponents-react/lib/Icon';
 import { ValueState } from '@ui5/webcomponents-react/lib/ValueState';
 import React from 'react';
@@ -11,7 +12,7 @@ import 'react-toastify/dist/ReactToastify.min.css';
 import { JSSTheme } from '../../interfaces/JSSTheme';
 import styles from './MessageToast.jss';
 
-const coloredStyles = ({ parameters }: JSSTheme) => ({
+const coloredStyles = {
   base: {
     width: '1.375rem',
     minWidth: '1.375rem',
@@ -19,15 +20,15 @@ const coloredStyles = ({ parameters }: JSSTheme) => ({
     minHeight: '1.375rem'
   },
   Success: {
-    color: parameters.sapPositiveElementColor
+    color: ThemingParameters.sapPositiveElementColor
   },
   Error: {
-    color: parameters.sapNegativeElementColor
+    color: ThemingParameters.sapNegativeElementColor
   },
   Warning: {
-    color: parameters.sapCriticalElementColor
+    color: ThemingParameters.sapCriticalElementColor
   }
-});
+};
 
 const useIconStyles = createUseStyles<JSSTheme, keyof ReturnType<typeof coloredStyles>>(coloredStyles, {
   name: 'MessageToastIcon'

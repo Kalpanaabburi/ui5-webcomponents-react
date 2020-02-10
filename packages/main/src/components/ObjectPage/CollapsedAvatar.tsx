@@ -1,6 +1,6 @@
 import { StyleClassHelper } from '@ui5/webcomponents-react-base/lib/StyleClassHelper';
 import { AvatarSize } from '@ui5/webcomponents-react/lib/AvatarSize';
-import React, { useLayoutEffect, useMemo, useRef, useState, ReactElement } from 'react';
+import React, { ReactElement, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { createUseStyles } from 'react-jss';
 
 const styles = {

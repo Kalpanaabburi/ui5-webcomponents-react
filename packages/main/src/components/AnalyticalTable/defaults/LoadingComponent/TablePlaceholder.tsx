@@ -1,7 +1,6 @@
+import { ThemingParameters } from '@ui5/webcomponents-react-base/lib/ThemingParameters';
 import React, { CSSProperties, FC, useMemo } from 'react';
 import ContentLoader from 'react-content-loader';
-import { useTheme } from 'react-jss';
-import { JSSTheme } from '../../../../interfaces/JSSTheme';
 
 const getArrayOfLength = (len) => Array.from(Array(len).keys());
 
@@ -25,18 +24,16 @@ export const TablePlaceholder: FC<{ columns: number; rows: number; style: CSSPro
 ) => {
   const { columns, rows, style, rowHeight } = props;
 
-  const { parameters } = useTheme() as JSSTheme;
-
   const height = rows * rowHeight;
   const width = columns * 65;
 
   const innerStyles = useMemo(() => {
     return {
-      backgroundColor: parameters.sapList_Background,
+      backgroundColor: ThemingParameters.sapList_Background,
       width: '100%',
       ...style
     };
-  }, [style, parameters.sapList_Background]);
+  }, [style, ThemingParameters.sapList_Background]);
 
   return (
     <ContentLoader
@@ -44,9 +41,9 @@ export const TablePlaceholder: FC<{ columns: number; rows: number; style: CSSPro
       height={height}
       width={width}
       speed={2}
-      primaryColor={parameters.sapContent_ImagePlaceholderBackground}
-      secondaryColor={parameters.sapField_PlaceholderTextColor}
-      primaryOpacity={(parameters.sapContent_DisabledOpacity as undefined) as number}
+      primaryColor={ThemingParameters.sapContent_ImagePlaceholderBackground}
+      secondaryColor={ThemingParameters.sapField_PlaceholderTextColor}
+      primaryOpacity={(ThemingParameters.sapContent_DisabledOpacity as undefined) as number}
     >
       {getArrayOfLength(rows).map((_, index) => (
         <TableRow key={index} columns={columns} y={rowHeight * index + rowHeight / 2} row={index} />
