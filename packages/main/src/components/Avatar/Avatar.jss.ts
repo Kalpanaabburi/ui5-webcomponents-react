@@ -22,7 +22,7 @@ const styles = ({ parameters }: JSSTheme) => ({
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     borderRadius: '0.25rem',
-    '--sapUiContentNonInteractiveIconColor': parameters.sapContent_ContrastIconColor
+    '--sapContent_NonInteractiveIconColor': parameters.sapContent_ContrastIconColor
   },
   // borderRadius 100%
   circle: {

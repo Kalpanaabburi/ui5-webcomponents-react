@@ -16,7 +16,7 @@ const styles = ({ parameters }: JSSTheme) => ({
     overflow: 'hidden',
     height: '100%',
     zIndex: ZIndex.ResponsivePopover,
-    backgroundColor: parameters.sapUiObjectHeaderBackground,
+    backgroundColor: parameters.sapObjectHeader_Background,
     '& ::-webkit-scrollbar': {
       backgroundColor: '#ffffff'
     },

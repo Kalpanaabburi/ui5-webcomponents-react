@@ -12,7 +12,7 @@ const approximateContentPxFromCharLength = (charLength) => 8 * charLength;
 
 export const useDynamicColumnWidths = (hooks) => {
   hooks.columns.push((columns, { instance }) => {
-    if(!instance.state || !instance.rows) {
+    if (!instance.state || !instance.rows) {
       return columns;
     }
 
@@ -51,7 +51,7 @@ export const useDynamicColumnWidths = (hooks) => {
 
     if (columns.length === 0 || !totalWidth) return columns;
 
-    const hasData = rows.some(row => !row.original?.emptyRow);
+    const hasData = rows.some((row) => !row.original?.emptyRow);
 
     if (scaleWidthMode === TableScaleWidthMode.Default || (!hasData && loading)) {
       const defaultWidth = calculateDefaultTableWidth();
@@ -131,7 +131,7 @@ export const useDynamicColumnWidths = (hooks) => {
         const isColumnVisible = (column.isVisible ?? true) && !hiddenColumns.includes(column.accessor);
         if (isColumnVisible) {
           const { minHeaderWidth, contentCharAvg } = columnMeta[column.accessor];
-          let additionalSpaceFactor = totalCharNum > 0 ? (contentCharAvg / totalCharNum) : 1 / visibleColumns.length;
+          let additionalSpaceFactor = totalCharNum > 0 ? contentCharAvg / totalCharNum : 1 / visibleColumns.length;
 
           const targetWidth = additionalSpaceFactor * availableWidth + minHeaderWidth;
 

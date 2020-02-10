@@ -6,7 +6,6 @@ const styles = ({ parameters }: JSSTheme) => ({
     fontFamily: parameters.sapFontFamily,
     listStyle: 'none',
     overflow: 'hidden',
-    WebkitTapHighlightColor: 'rgba(255, 255, 255, 0)',
     textAlign: 'center',
     alignContent: 'center',
     alignItems: 'center',
@@ -17,6 +16,9 @@ const styles = ({ parameters }: JSSTheme) => ({
     fontSize: '0.875rem',
     '&:focus': {
       outline: `1px dotted ${parameters.sapContent_FocusColor}`
+    },
+    '&:hover': {
+      background: parameters.sapButton_Hover_Background
     },
     height: CssSizeVariables.sapWcrSegmentedButtonItemHeight,
     lineHeight: CssSizeVariables.sapWcrSegmentedButtonItemLineHeight,
@@ -29,26 +31,26 @@ const styles = ({ parameters }: JSSTheme) => ({
     '&:last-child': {
       borderTopRightRadius: '0.25rem',
       borderBottomRightRadius: '0.25rem',
-      borderRightColor: parameters.sapUiSegmentedButtonBorderColor
+      borderRightColor: parameters.sapButton_BorderColor
     },
-    color: parameters.sapUiSegmentedButtonTextColor,
-    border: `1px solid ${parameters.sapUiSegmentedButtonBorderColor}`,
+    color: parameters.sapButton_TextColor,
+    border: `1px solid ${parameters.sapButton_BorderColor}`,
     borderRightColor: 'transparent',
-    backgroundColor: parameters.sapUiSegmentedButtonBackground
+    backgroundColor: parameters.sapButton_Background
   },
   selected: {
-    background: parameters.sapUiSegmentedButtonSelectedBackground,
-    color: parameters.sapUiSegmentedButtonSelectedTextColor,
-    borderColor: parameters.sapUiSegmentedButtonSelectedHoverBorderColor,
-    '--sapContent_NonInteractiveIconColor': parameters.sapUiContentContrastIconColor,
+    background: parameters.sapButton_Selected_Background,
+    color: parameters.sapButton_Selected_TextColor,
+    borderColor: parameters.sapButton_Selected_BorderColor,
+    '--sapContent_NonInteractiveIconColor': parameters.sapContent_ContrastIconColor,
     '$:active': {
-      background: parameters.sapUiButtonActiveBackground,
-      color: parameters.sapUiButtonActiveTextColor
+      background: parameters.sapButton_Active_Background,
+      color: parameters.sapButton_Active_TextColor
     }
   },
   focusableItem: {
     '&:not($selected):hover': {
-      background: parameters.sapUiSegmentedButtonHoverBackground
+      background: parameters.sapButton_Selected_Hover_Background
     }
   },
   disabled: { textShadow: 'none', cursor: 'default', opacity: '0.4' },
