@@ -1,9 +1,10 @@
+import { CssSizeVariables } from '@ui5/webcomponents-react-base/lib/CssSizeVariables';
 import { JSSTheme } from '../../interfaces/JSSTheme';
 
 const styles = ({ parameters }: JSSTheme) => ({
   tableContainer: {
     width: '100%',
-    height: 'calc(100% - 2.75rem)',
+    height: `calc(100% - ${CssSizeVariables.sapWcrAnalyticalTableRowHeight})`,
     minHeight: '3rem'
   },
   table: {
@@ -14,13 +15,13 @@ const styles = ({ parameters }: JSSTheme) => ({
   },
   tableHeaderRow: {
     boxShadow: 'none !important',
-    height: '2.75rem',
+    height: CssSizeVariables.sapWcrAnalyticalTableRowHeight,
     zIndex: 1,
     position: 'relative'
   },
   th: {
     backgroundColor: parameters.sapList_HeaderBackground,
-    height: '2.75rem',
+    height: CssSizeVariables.sapWcrAnalyticalTableRowHeight,
     fontFamily: parameters.sapFontFamily,
     fontSize: parameters.sapFontSize,
     fontWeight: 'normal',
@@ -37,17 +38,14 @@ const styles = ({ parameters }: JSSTheme) => ({
   tbody: {
     position: 'relative',
     zIndex: 0,
-    overflowX: 'auto',
     backgroundColor: parameters.sapList_Background
   },
   alternateRowColor: {
-    '& $tr:nth-child(even)': {
-      backgroundColor: parameters.sapUiListHeaderBackground
-    }
+    backgroundColor: parameters.sapList_HeaderBackground
   },
+  emptyRow: {},
   tr: {
     zIndex: 0,
-    backgroundColor: parameters.sapList_Background,
     color: parameters.sapList_TextColor,
     '&[data-is-selected]': {
       backgroundColor: `${parameters.sapList_SelectionBackgroundColor} !important`
@@ -72,11 +70,11 @@ const styles = ({ parameters }: JSSTheme) => ({
     }
   },
   selectable: {
-    '& $tr:hover': {
+    '& $tr:hover:not($emptyRow)': {
       backgroundColor: parameters.sapList_Hover_Background,
       cursor: 'pointer'
     },
-    '& $tr:active:not([data-is-selected]):not($tableGroupHeader)': {
+    '& $tr:active:not([data-is-selected]):not($tableGroupHeader):not($emptyRow)': {
       backgroundColor: parameters.sapList_Active_Background,
       '& $tableCell': {
         borderRight: `1px solid ${parameters.sapList_Active_Background}`,
@@ -86,7 +84,7 @@ const styles = ({ parameters }: JSSTheme) => ({
     }
   },
   tableCell: {
-    height: '2.75rem',
+    height: CssSizeVariables.sapWcrAnalyticalTableRowHeight,
     fontFamily: parameters.sapFontFamily,
     fontSize: parameters.sapFontSize,
     fontWeight: 'normal',
@@ -104,6 +102,10 @@ const styles = ({ parameters }: JSSTheme) => ({
     whiteSpace: 'nowrap',
     alignItems: 'center'
   },
+  virtualTableBody: {
+    overflowX: 'hidden !important',
+    overflowY: 'auto !important'
+  },
   noDataContainer: {
     display: 'flex',
     justifyContent: 'center',
@@ -118,21 +120,6 @@ const styles = ({ parameters }: JSSTheme) => ({
     fontWeight: 'normal',
     borderBottom: `1px solid ${parameters.sapList_BorderColor}`
   },
-  compactSize: {
-    '&$tableContainer': {
-      height: 'calc(100% - 2rem)'
-    },
-    '& $tableHeaderRow': {
-      height: '2rem'
-    },
-    '& $th': {
-      height: '2rem'
-    },
-    '& $tableCell': {
-      height: '2rem'
-    }
-  },
-
   modifiedRowHeight: {
     '& $tableCell': {
       height: (props) => `${props.rowHeight}px`
