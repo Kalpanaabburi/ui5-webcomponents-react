@@ -1,3 +1,3 @@
-import { ThemingParameters } from '../styling/themingParameters';
+import { ThemingParameters } from '../styling/ThemingParameters';
 
 export { ThemingParameters };

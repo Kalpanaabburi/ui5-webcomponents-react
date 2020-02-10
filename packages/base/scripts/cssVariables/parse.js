@@ -19,4 +19,4 @@ for (const variable of variables) {
 }
 fileContent += '}\n';
 
-writeFileSync(path.join(PATHS.packages, 'base', 'src', 'styling', 'themingParameters.ts'), fileContent);
+writeFileSync(path.join(PATHS.packages, 'base', 'src', 'styling', 'ThemingParameters.ts'), fileContent);
