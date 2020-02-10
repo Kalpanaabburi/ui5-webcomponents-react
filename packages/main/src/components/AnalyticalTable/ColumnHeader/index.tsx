@@ -7,8 +7,7 @@ import { StyleClassHelper } from '@ui5/webcomponents-react-base/lib/StyleClassHe
 import { ThemingParameters } from '@ui5/webcomponents-react-base/lib/ThemingParameters';
 import { Icon } from '@ui5/webcomponents-react/lib/Icon';
 import React, { CSSProperties, DragEventHandler, FC, ReactNode, ReactNodeArray, useMemo } from 'react';
-import { createUseStyles, useTheme } from 'react-jss';
-import { JSSTheme } from '../../../interfaces/JSSTheme';
+import { createUseStyles } from 'react-jss';
 import { ColumnType } from '../types/ColumnType';
 import { ColumnHeaderModal } from './ColumnHeaderModal';
 
@@ -165,7 +164,6 @@ const ColumnHeader: FC<ColumnHeaderProps> = (props) => {
   ]);
 
   const isResizable = !isLastColumn && column.canResize;
-  const theme = useTheme() as JSSTheme;
   const innerStyle: CSSProperties = useMemo(() => {
     const modifiedStyles: CSSProperties = {
       width: '100%',
@@ -178,7 +176,7 @@ const ColumnHeader: FC<ColumnHeaderProps> = (props) => {
       modifiedStyles.maxWidth = `calc(100% - 16px)`;
     }
     if (dragOver) {
-      modifiedStyles.borderLeft = `3px solid ${theme.ThemingParameters.sapSelectedColor}`;
+      modifiedStyles.borderLeft = `3px solid ${ThemingParameters.sapSelectedColor}`;
     }
     return modifiedStyles;
   }, [isResizable, dragOver]);

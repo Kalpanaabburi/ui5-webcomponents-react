@@ -30,8 +30,7 @@ const PieChartComponent = forwardRef((props: PieChartPropTypes, ref: Ref<any>) =
     legendRef
   } = props as PieChartPropTypes & InternalProps;
 
-  const theme: any = useTheme();
-  const data = useChartData(labels, datasets, colors, theme.theme, true);
+  const data = useChartData(labels, datasets, colors, true);
 
   const pieChartDefaultConfig = useMemo(() => {
     return {

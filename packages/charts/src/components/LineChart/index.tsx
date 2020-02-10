@@ -66,8 +66,7 @@ const LineChartComponent = forwardRef((props: LineChartPropTypes, ref: Ref<any>)
   }, [categoryAxisFormatter, valueAxisFormatter]);
   const chartOptions = useMergedConfig(lineChartDefaultConfig, options);
 
-  const theme: any = useTheme();
-  const data = useChartData(labels, datasets, colors, theme.theme);
+  const data = useChartData(labels, datasets, colors);
 
   const chartRef = useConsolidatedRef<any>(ref);
   const handleLegendItemPress = useLegendItemClickHandler(chartRef, legendRef);

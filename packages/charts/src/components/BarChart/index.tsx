@@ -38,8 +38,7 @@ const BarChartComponent = forwardRef((props: BarChartPropTypes, ref: Ref<any>) =
     legendRef
   } = props as BarChartPropTypes & InternalProps;
 
-  const theme: any = useTheme();
-  const data = useChartData(labels, datasets, colors, theme.theme);
+  const data = useChartData(labels, datasets, colors);
 
   const chartRef = useConsolidatedRef<any>(ref);
 

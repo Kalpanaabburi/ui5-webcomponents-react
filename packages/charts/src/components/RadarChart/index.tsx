@@ -28,8 +28,7 @@ const RadarChartComponent = forwardRef((props: RadarChartPropTypes, ref: Ref<any
     legendRef
   } = props as RadarChartPropTypes & InternalProps;
 
-  const theme: any = useTheme();
-  const data = useChartData(labels, datasets, colors, theme.theme);
+  const data = useChartData(labels, datasets, colors);
 
   const radarChartDefaultConfig = useMemo(() => {
     return {

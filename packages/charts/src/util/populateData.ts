@@ -1,3 +1,4 @@
+import { getTheme } from '@ui5/webcomponents-base/dist/config/Theme';
 import { useMemo } from 'react';
 import { getOrLoadTheme } from '../themes/themeMap';
 
@@ -22,6 +23,7 @@ export const resolveColors = (colors, theme) => {
   return Object.values(sequentialColors);
 };
 
-export const useChartData = (labels, datasets, colors, theme, isPie = false) => {
+export const useChartData = (labels, datasets, colors, isPie = false) => {
+  const theme = getTheme();
   return useMemo(() => populateData(labels, datasets, colors, theme, isPie), [labels, datasets, colors, theme, isPie]);
 };

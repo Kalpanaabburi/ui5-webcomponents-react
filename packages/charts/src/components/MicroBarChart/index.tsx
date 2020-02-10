@@ -1,5 +1,6 @@
+import { getTheme } from '@ui5/webcomponents-base/dist/config/Theme';
 import React, { CSSProperties, FC, forwardRef, Ref } from 'react';
-import { createUseStyles, useTheme } from 'react-jss';
+import { createUseStyles } from 'react-jss';
 import { CommonProps } from '../../interfaces/CommonProps';
 import { resolveColors } from '../../util/populateData';
 
@@ -71,10 +72,9 @@ const MicroBarChart: FC<MicroBarChartPropTypes> = forwardRef(
   (props: MicroBarChartPropTypes, ref: Ref<HTMLDivElement>) => {
     const { className, dataset, colors, maxWidth, visibleDatasetCount, valueFormatter, labelFormatter, style } = props;
     const classes = useStyles();
-    const theme: any = useTheme();
     const visibleDatasetArray = visibleDatasetCount ? dataset.slice(0, visibleDatasetCount) : dataset;
 
-    const colorPalette = resolveColors(colors, theme.theme);
+    const colorPalette = resolveColors(colors, getTheme());
 
     const maxValue = Math.max(...dataset.map((item) => item.value));
 

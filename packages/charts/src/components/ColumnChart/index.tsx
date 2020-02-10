@@ -39,8 +39,7 @@ const ColumnChartComponent = forwardRef((props: ColumnChartPropTypes, ref: Ref<a
     legendRef
   } = props as ColumnChartPropTypes & InternalProps;
 
-  const theme: any = useTheme();
-  const data = useChartData(labels, datasets, colors, theme.theme);
+  const data = useChartData(labels, datasets, colors);
 
   const chartRef = useConsolidatedRef<any>(ref);
 

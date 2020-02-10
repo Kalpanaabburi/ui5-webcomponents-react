@@ -30,8 +30,7 @@ const DonutChartComponent = forwardRef((props: DonutChartPropTypes, ref: Ref<any
     legendRef
   } = props as DonutChartPropTypes & InternalProps;
 
-  const theme: any = useTheme();
-  const data = useChartData(labels, datasets, colors, theme.theme, true);
+  const data = useChartData(labels, datasets, colors, true);
 
   const donutChartDefaultConfig = useMemo(() => {
     return {
